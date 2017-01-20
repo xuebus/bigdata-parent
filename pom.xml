@@ -8,8 +8,8 @@
     <artifactId>bigdata-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>bigdata-es</module>
         <module>bigdata-lib</module>
+        <module>bigdata-es4sql</module>
     </modules>
     <packaging>pom</packaging>
 

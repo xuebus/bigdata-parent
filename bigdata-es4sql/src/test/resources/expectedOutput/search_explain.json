@@ -1,0 +1,39 @@
+{
+  "from" : 0,
+  "size" : 0,
+  "query" : {
+    "bool" : {
+      "must" : {
+        "bool" : {
+          "must" : [ {
+            "wildcard" : {
+              "firstname" : "A*"
+            }
+          }, {
+            "range" : {
+              "age" : {
+                "from" : 20,
+                "to" : null,
+                "include_lower" : false,
+                "include_upper" : true
+              }
+            }
+          } ]
+        }
+      }
+    }
+  },
+  "sort" : [ {
+    "_score" : {
+      "order" : "asc"
+    }
+  } ],
+  "aggregations" : {
+    "gender" : {
+      "terms" : {
+        "field" : "gender",
+        "size" : 200
+      }
+    }
+  }
+}
